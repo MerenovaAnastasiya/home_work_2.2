@@ -1,0 +1,12 @@
+.header-block {
+    height: 100px;
+    background-color: red;
+}
+.header-block:hover{
+    cursor: pointer;
+}
+.body-block {
+    display: none;
+    height: 400px;
+    background-color: yellow;
+}

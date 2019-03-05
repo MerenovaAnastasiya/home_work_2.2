@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 accordeon-block">
+            <div class="header-block"></div>
+                <div class="body-block">
+                    <p>
+                        uiuiuiuiuiiuiuiuiuiu
+                    </p>
+                </div>
+        </div>
+        <div class="col-sm-6 accordeon-block">
+            <div class="header-block" id="abc">
+            </div>
+                <div class="body-block" id="abcv">
+                    <p>
+                        uiuiuiuiuiiuiuiuiuiu
+                    </p>
+                </div>
+        </div>
+    </div>
+    <script>
+        $(".accordeon-block").click(function () {
+            $(this)
+                .children()
+                .filter(".body-block")
+                .toggle();
+        });
+
+
+    </script>
+</body>
+</html>
+
