@@ -26,16 +26,12 @@ public class MyViewResolver extends InternalResourceViewResolver {
         else {
             ServletContext context = getServletContext();
             File file = new File(context.getRealPath(context.getContextPath()));
-
             List<File> files = searchAllFiles(new ArrayList(), file);
-
             String pathTo = getPath(searchView(files, viewName));
-
             InternalResourceView view = (InternalResourceView)super.buildView(pathTo);
             view.setPreventDispatchLoop(true);
             return view;
         }
-
     }
 
     private static List searchAllFiles(List list, File file) {
@@ -75,14 +71,8 @@ public class MyViewResolver extends InternalResourceViewResolver {
     }
 
     private static boolean checkStatus(String viewName) {
-        List<Integer> integerList = new ArrayList<>();
-        List<HttpStatus> codes = Arrays.asList(HttpStatus.values());
-        for(HttpStatus status:codes) {
-            integerList.add(status.value());
-        }
         try {
-            if(integerList.contains(Integer.parseInt(viewName)));
-            return true;
+            return Arrays.stream(HttpStatus.values()).mapToInt(s-> s.value()).anyMatch(s-> s==Integer.parseInt(viewName));
         }
         catch (NumberFormatException numberExc) {
 
