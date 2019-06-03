@@ -1,2 +1,2 @@
 # home_work
-Home work for ITIS 2.2
+Home work on Java for ITIS 2.2 (2018-2019)
